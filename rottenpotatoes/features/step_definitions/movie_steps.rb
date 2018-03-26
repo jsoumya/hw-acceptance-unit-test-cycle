@@ -13,14 +13,5 @@ Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
   step %Q{I should see "#{director}"}
 end
 
-Given /I have added "(.*)" with rating "(.*)"/ do |title, rating|
-  steps %Q{
-      Given I am on Create New Movie page
-      When I fill in "Title" with "#{movie}"
-      And I select "#{rating}" from "Rating"
-      And I press "Save Changes"
-    }
-end
-
 
 
