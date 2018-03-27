@@ -60,7 +60,7 @@
         null,
         null,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -106,7 +106,7 @@
         null
       ]
     },
-    "timestamp": 1522101403
+    "timestamp": 1522119602
   },
   "Cucumber Features": {
     "coverage": {
@@ -205,16 +205,8 @@
       "/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/application_helper.rb": [
         1,
         null
-      ],
-      "/home/ubuntu/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/movies_helper.rb": [
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
       ]
     },
-    "timestamp": 1522101394
+    "timestamp": 1522115796
   }
 }

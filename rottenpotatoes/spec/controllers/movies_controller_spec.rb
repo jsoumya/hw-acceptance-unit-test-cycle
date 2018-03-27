@@ -45,6 +45,7 @@ describe MoviesController do
         @id = "-1"
         @movie = double('null movie').as_null_object
         expect(Movie).to receive(:find).and_return(@movie)
+        
         get :show, id: @id
         expect(response).to render_template(:show)
     end
@@ -62,24 +63,6 @@ describe MoviesController do
     end
   end
   
-  describe "edit" do
-    it "edit an existing movie" do
-        @id = "-1"
-        @movie = double('null movie').as_null_object
-        expect(Movie).to receive(:find).and_return(@movie)
-        
-        get :edit, id: @id
-        expect(response).to render_template(:edit)
-    end
-  end
-  
-  describe "new" do
-    it "render the new template" do
-        get :new 
-        expect(response).to render_template(:new)
-    end
-  end
-  
   describe "update" do
     it "update existing movie" do
         @id = "-1"
@@ -93,15 +76,17 @@ describe MoviesController do
     end
   end
   
-  describe "sorting movies" do
-    it "sort with selected_ratings" do 
-        get :index, sort: "title"
-        expect(response.body).to include "ratings"
-    end
-    it "sort with release_date" do 
-        get :index, sort: "release_date"
-        expect(response.body).to include "release_date"
-    end 
+  describe "index" do
+      context "sorting movies" do
+        it "sort with selected_ratings" do 
+            get :index, sort: "title"
+            expect(response.body).to include "ratings"
+        end
+        it "sort with release_date" do 
+            get :index, sort: "release_date"
+            expect(response.body).to include "release_date"
+        end 
+      end
   end
     
   
